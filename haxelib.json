@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"tags": ["adbuddiz","ads", "openfl", "android", "interstitials"],
 	"description": "Unofficial AdBuddiz extension for OpenFL.",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"releasenote": "Currently only support Android.",
 	"contributors": ["hazame"],
 	"dependencies": {}
