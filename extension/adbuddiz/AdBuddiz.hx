@@ -46,7 +46,7 @@ class AdBuddiz {
 	}
 	
 	/**
-	 * Get current SDK type.
+	 * Get current API type.
 	 */
 	public static function getType():String {
 		if(funcGetType == null) funcGetType = JNI.createStaticMethod(CLASS_EXT, "getType", "()Ljava/lang/String;");
@@ -54,7 +54,7 @@ class AdBuddiz {
 	}
 	
 	/**
-	 * Get SDK version of AdBuddiz. If you want the current version of this extension, use LIB_VERSION instead.
+	 * Get API version of AdBuddiz. If you want the current version of this extension, use LIB_VERSION instead.
 	 */
 	public static function getNetworkVersion():String {
 		if(funcGetNetworkVersion == null) funcGetNetworkVersion = JNI.createStaticMethod(CLASS_EXT, "getNetworkVersion", "()Ljava/lang/String;");
