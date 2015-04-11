@@ -1,0 +1,11 @@
+{
+	"name": "openfl-adbuddiz",
+	"url": "https://github.com/hazagames/openfl-adbuddiz",
+	"license": "MIT",
+	"tags": ["adbuddiz","ads", "openfl", "android", "interstitials"],
+	"description": "Unofficial AdBuddiz extension for OpenFL.",
+	"version": "1.0.0",
+	"releasenote": "Currently only support Android.",
+	"contributors": ["hazame"],
+	"dependencies": {}
+}
