@@ -38,5 +38,5 @@ Use:
 ________________________________________________________
 
 
-My Twitter https://twitter.com/haza418
+https://twitter.com/haza418
 	
