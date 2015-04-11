@@ -19,7 +19,7 @@ Inside **Project.xml** add:
 
 - **`<setenv name="AdBuddizTestMode"/>`** if you want to active test mode.
 
-- **`<setenv name="AdBuddizLogLevel" value="Info" />`** in case if you want to set log level ("Silent, Info and Error").
+- **`<setenv name="AdBuddizLogLevel" value="Info" />`** in case if you want to set log level (Silent, Info and Error).
 
 Use:
 
