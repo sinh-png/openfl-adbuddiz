@@ -1,6 +1,6 @@
 ### OpenFL-AdBuddiz
 
-Unofficial AdBuddiz extension for OpenFL. Currently only work for Android.
+AdBuddiz Community extension for OpenFL. Currently only work for Android.
 
 ________________________________________________________
 
