@@ -5,11 +5,7 @@ import cpp.Void;
 import openfl.utils.JNI;
 #end
 
-#if ios
-import flash.Lib;
-#end
-
-#if (android || ios)
+#if (android)
 @:allow(extension.adbuddiz.AdBuddizCallback) 
 class AdBuddiz {
 	/**
@@ -21,8 +17,6 @@ class AdBuddiz {
 	
 	static var funcShowAd:Void->Void = null;
 	static var funcIsReadyToShowAd:Void->Bool = null;
-	static var funcGetType:Void->String = null;
-	static var funcGetNetworkVersion:Void->String = null;
 	
 	/**
 	 * You can set the callbacks inside this object.
@@ -44,62 +38,45 @@ class AdBuddiz {
 		if(funcIsReadyToShowAd == null) funcIsReadyToShowAd = JNI.createStaticMethod(CLASS_EXT, "isReadyToShowAd", "()Z");
 		return funcIsReadyToShowAd();
 	}
-	
-	/**
-	 * Get current API type.
-	 */
-	public static function getType():String {
-		if(funcGetType == null) funcGetType = JNI.createStaticMethod(CLASS_EXT, "getType", "()Ljava/lang/String;");
-		return funcGetType();
-	}
-	
-	/**
-	 * Get API version of AdBuddiz. If you want the current version of this extension, use LIB_VERSION instead.
-	 */
-	public static function getNetworkVersion():String {
-		if(funcGetNetworkVersion == null) funcGetNetworkVersion = JNI.createStaticMethod(CLASS_EXT, "getNetworkVersion", "()Ljava/lang/String;");
-		return funcGetNetworkVersion();
-	}
-
 }
 
 class AdBuddizCallback {
 	/**
 	 * Callback that will be called when ad is sucessfully cached. This callback has no argument.
 	 */
-	//public var onCached:Dynamic;
+	//public var didCacheAd:Dynamic;
 	
 	/**
 	 * Callback that will be called when successfully show ad. This callback has no argument.
 	 */
-	public var onShown:Dynamic;
+	public var didShowAd:Dynamic;
 	
 	/**
 	 * Callback that will be called when ad is being clicked on. This callback has no argument.
 	 */
-	public var onClicked:Dynamic;
+	public var didClick:Dynamic;
 	
 	/**
 	 * Callback that will be called when hide ad. This callback has no argument.
 	 */
-	public var onHidden:Dynamic;
+	public var didHideAd:Dynamic;
 	
 	/**
 	 * Callback that will be called when failed to show ad. This callback has one String type argument.
 	 */
-	public var onFailed:Dynamic;
+	public var didFailToShowAd:Dynamic;
 	
 	public function new() {
 		JNI.createStaticMethod(AdBuddiz.CLASS_EXT, "setCallbackListener", "(Lorg/haxe/lime/HaxeObject;)V")(this);
 	}
 	
-	function call(CBType:String, Error:String) {
-		switch(CBType) {
-			//case "cached": if (onCached != null) onCached();
-			case "shown": if (onShown != null) onShown();
-			case "clicked": if (onClicked != null) onClicked();
-			case "hidden": if (onHidden != null) onHidden();
-			case "failed": if (onFailed != null) onFailed(Error);
+	function call(type:String, error:String) {
+		switch(type) {
+			case "didCacheAd": if (didCacheAd != null) didCacheAd();
+			case "didShowAd": if (didShowAd != null) didShowAd();
+			case "didClick": if (didClick != null) didClick();
+			case "didHideAd": if (didHideAd != null) didHideAd();
+			case "didFailToShowAd": if (didFailToShowAd != null) didFailToShowAd(error);
 		}
 	}
 }
