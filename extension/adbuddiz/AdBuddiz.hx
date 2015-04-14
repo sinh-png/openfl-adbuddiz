@@ -11,7 +11,7 @@ class AdBuddiz {
 	/**
 	 * The version of this extension.
 	 */
-	inline public static var LIB_VERSION:String = "0.1.0";
+	inline public static var VERSION:String = "0.1.1";
 	
 	inline static var CLASS_EXT:String = "me/haza/adbuddiz/AdBuddizExtension";
 	
@@ -72,7 +72,7 @@ class AdBuddizCallback {
 	
 	function call(type:String, error:String) {
 		switch(type) {
-			case "didCacheAd": if (didCacheAd != null) didCacheAd();
+			//case "didCacheAd": if (didCacheAd != null) didCacheAd();
 			case "didShowAd": if (didShowAd != null) didShowAd();
 			case "didClick": if (didClick != null) didClick();
 			case "didHideAd": if (didHideAd != null) didHideAd();
