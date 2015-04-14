@@ -3,6 +3,6 @@
 	<section if="android">
 		<dependency name="openfl-adbuddiz" path="dependencies/openfl-adbuddiz"/>
 		<android extension="me.haza.adbuddiz.AdBuddizExtension" />
-		<template path="dependencies/openfl-adbuddiz/libs/adbuddiz.jar" rename="deps/openfl-adbuddiz/libs/adbuddiz.jar" />
+		<template path="dependencies/openfl-adbuddiz/libs/AdBuddiz-2.4.5.jar" rename="deps/openfl-adbuddiz/libs/AdBuddiz-2.4.5.jar" />
 	</section>
 </project>
