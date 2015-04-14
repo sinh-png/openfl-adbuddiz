@@ -1,3 +1,7 @@
+# OpenFL-AdBuddiz
+
+AdBuddiz Community extension for OpenFL. Currently only work for Android.
+
 ### 1. Install 
 
 Use this command 
