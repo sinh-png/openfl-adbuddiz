@@ -64,8 +64,11 @@ if (AdBuddiz.IsReadyToShowAd()) {
 }
 ```
 
-That's it!
+### 5. Example
 
+An example for using OpenFl-AdBuddiz: https://github.com/hazagames/openfl-adbuddiz-example
+
+That's it!
 _______________________________________
 
 https://twitter.com/haza418
