@@ -35,7 +35,6 @@ You can control the AdBuddiz SDK log level by adding the following line in `"pro
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
 ```
 
-
 ### 4. Show Ad
 
 ##### a) Show ad
@@ -49,7 +48,6 @@ In order to get more information about the SDK behavior, you can set ad callback
 
 Example:
 ```haxe
-AdBuddiz.callback.didCacheAd = function() trace("Did cache ad");
 AdBuddiz.callback.didShowAd = function() trace("Did show ad");
 AdBuddiz.callback.didHideAd = function() trace("Did hide ad");
 AdBuddiz.callback.didClick = function() trace("Did click on ad");

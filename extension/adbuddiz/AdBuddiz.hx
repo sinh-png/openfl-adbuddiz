@@ -53,11 +53,6 @@ class AdBuddiz {
 
 class AdBuddizCallback {
 	/**
-	 * Callback that will be called when ad is sucessfully cached. This callback has no argument.
-	 */
-	//public var didCacheAd:Dynamic;
-	
-	/**
 	 * Callback that will be called when successfully show ad. This callback has no argument.
 	 */
 	public var didShowAd:Dynamic;
@@ -87,7 +82,6 @@ class AdBuddizCallback {
 	
 	function call(type:String, error:String) {
 		switch(type) {
-			case "didCacheAd": if (didCacheAd != null) didCacheAd();
 			case "didShowAd": if (didShowAd != null) didShowAd();
 			case "didClick": if (didClick != null) didClick();
 			case "didHideAd": if (didHideAd != null) didHideAd();
