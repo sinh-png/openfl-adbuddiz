@@ -5,7 +5,7 @@ Use this command
 `haxelib install openfl-adbuddiz`
 
 ### 2. Import the extension to your project
-In "project.xml" add 
+In `"project.xml"` add the following line
 ```xml
 <haxelib name="openfl-adbuddiz" />
 ```
@@ -13,20 +13,20 @@ In "project.xml" add
 ### 3. Configure & Initialize 
 
 ##### a) Config your publisher key
-In "project.xml" add the following line
+To set your publisher key, in `"project.xml"` add the following line
 ```xml
 <setenv name="AdBuddizPublisherKey" value="TEST_PUBLISHER_KEY" />
 ```
-Depending on your app, replace "TEST_PUBLISHER_KEY" with the right publisher key.
+Depending on your app, replace `"TEST_PUBLISHER_KEY"` with the right publisher key.
 
 ##### b) Optional - Test mode
-You can activate test mode by adding the following line in your "project.xml"
+You can activate test mode by adding the following line in your `"project.xml"`
 ```xml
 <setenv name="AdBuddizTestModeActive" />
 ````
 
 ##### b) Optional - Logs
-You can control the AdBuddiz SDK log level by adding the following line in your "project.xml"
+You can control the AdBuddiz SDK log level by adding the following line in your `"project.xml"`
 ```xml
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
 ```
@@ -41,7 +41,7 @@ We recommend this call be made where there is a natural break in play like betwe
 
 ##### b) Optional - Setting callbacks:
 
-In order to get more information about the SDK behavior, you can set ad callbacks via AdBuddiz.callback.
+In order to get more information about the SDK behavior, you can set ad callbacks via `AdBuddiz.callback`.
 
 Example:
 ```haxe
@@ -53,7 +53,7 @@ AdBuddiz.callback.didFailToShowAd = function(error:String) trace('Failed to show
 
 ##### c) Optional - Request SDK Status
 
-To know if the SDK will be able to display an ad, you can call AdBuddiz.isReadyToShowAd().
+To know if the SDK will be able to display an ad, you can call `AdBuddiz.isReadyToShowAd()`.
 ```haxe
 if (AdBuddiz.IsReadyToShowAd()) {
 	trace("Ad is ready to show");
