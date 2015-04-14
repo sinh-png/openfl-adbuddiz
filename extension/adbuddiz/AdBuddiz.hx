@@ -1,11 +1,14 @@
 package extension.adbuddiz;
+
 import cpp.Void;
 
 #if android
 import openfl.utils.JNI;
+#elseif ios
+//
 #end
 
-#if (android)
+#if (android || ios)
 @:allow(extension.adbuddiz.AdBuddizCallback) 
 class AdBuddiz {
 	/**
@@ -27,7 +30,11 @@ class AdBuddiz {
 	 * Show ad.
 	 */
 	public static function showAd() {
-		if(funcShowAd == null) funcShowAd = JNI.createStaticMethod(CLASS_EXT, "showAd", "()V");
+		#if android
+		if (funcShowAd == null) funcShowAd = JNI.createStaticMethod(CLASS_EXT, "showAd", "()V");
+		#elseif ios
+		//
+		#end
 		funcShowAd();
 	}
 	
@@ -35,7 +42,11 @@ class AdBuddiz {
 	 * Return true if ad is ready to show, otherwise return false.
 	 */
 	public static function isReadyToShowAd():Bool {
-		if(funcIsReadyToShowAd == null) funcIsReadyToShowAd = JNI.createStaticMethod(CLASS_EXT, "isReadyToShowAd", "()Z");
+		#if android
+		if (funcIsReadyToShowAd == null) funcIsReadyToShowAd = JNI.createStaticMethod(CLASS_EXT, "isReadyToShowAd", "()Z");
+		#elseif ios
+		//
+		#end
 		return funcIsReadyToShowAd();
 	}
 }
@@ -67,7 +78,11 @@ class AdBuddizCallback {
 	public var didFailToShowAd:Dynamic;
 	
 	public function new() {
+		#if android
 		JNI.createStaticMethod(AdBuddiz.CLASS_EXT, "setCallbackListener", "(Lorg/haxe/lime/HaxeObject;)V")(this);
+		#elseif ios
+		//
+		#end
 	}
 	
 	function call(type:String, error:String) {
