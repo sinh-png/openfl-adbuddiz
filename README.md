@@ -49,6 +49,7 @@ In order to get more information about the SDK behavior, you can set ad callback
 
 Example:
 ```haxe
+AdBuddiz.callback.didCacheAd = function() trace("Did cache ad");
 AdBuddiz.callback.didShowAd = function() trace("Did show ad");
 AdBuddiz.callback.didHideAd = function() trace("Did hide ad");
 AdBuddiz.callback.didClick = function() trace("Did click on ad");
@@ -59,7 +60,7 @@ AdBuddiz.callback.didFailToShowAd = function(error:String) trace('Failed to show
 
 To know if the SDK will be able to display an ad, you can call `AdBuddiz.isReadyToShowAd()`.
 ```haxe
-if (AdBuddiz.IsReadyToShowAd()) {
+if (AdBuddiz.isReadyToShowAd()) {
 	trace("Ad is ready to show");
 }
 ```

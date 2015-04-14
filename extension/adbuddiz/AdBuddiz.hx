@@ -87,7 +87,7 @@ class AdBuddizCallback {
 	
 	function call(type:String, error:String) {
 		switch(type) {
-			//case "didCacheAd": if (didCacheAd != null) didCacheAd();
+			case "didCacheAd": if (didCacheAd != null) didCacheAd();
 			case "didShowAd": if (didShowAd != null) didShowAd();
 			case "didClick": if (didClick != null) didClick();
 			case "didHideAd": if (didHideAd != null) didHideAd();
