@@ -1,54 +1,63 @@
-1. Install 
+### 1. Install 
 
 Use this command: 
-haxelib install openfl-adbuddiz
+`haxelib install openfl-adbuddiz`
 
-2. Import the extension to your project
-In "project.xml" add:
+### 2. Import the extension to your project
+In "project.xml" add 
+```xml
 <haxelib name="openfl-adbuddiz" />
+```
 
-3. Configure & Initialize 
-a) Config your publisher key:
+### 3. Configure & Initialize 
 
+##### a) Config your publisher key
 In "project.xml" add the following line
-<setenv name="AdBuddizPublisherKey" value="TEST_PUBLISHER_KEY" /> 
+```xml
+<setenv name="AdBuddizPublisherKey" value="TEST_PUBLISHER_KEY" />
+```
 Depending on your app, replace "TEST_PUBLISHER_KEY" with the right publisher key.
 
-b) Optional - Test mode
+##### b) Optional - Test mode
 You can activate test mode by adding the following line in your "project.xml"
-<setenv name="AdBuddizTestModeActive" /> 
+```xml
+<setenv name="AdBuddizTestModeActive" />
+````
 
-b) Optional - Logs
+##### b) Optional - Logs
 You can control the AdBuddiz SDK log level by adding the following line in your "project.xml"
+```xml
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
+```
 
 
-4. Show Ad
+### 4. Show Ad
 
-a) Show ad
+##### a) Show ad
 
-Whenever you want to display an ad, call AdBuddiz.showAd().
+Whenever you want to display an ad, call `AdBuddiz.showAd()`.
 We recommend this call be made where there is a natural break in play like between levels for example. 
 
-b) Option - Setting callbacks:
+##### b) Optional - Setting callbacks:
 
 In order to get more information about the SDK behavior, you can set ad callbacks via AdBuddiz.callback.
 
 Example:
+```haxe
 AdBuddiz.callback.didShowAd = function() trace("Did show ad");
-	
 AdBuddiz.callback.didHideAd = function() trace("Did hide ad");
-			
 AdBuddiz.callback.didClick = function() trace("Did click on ad");
-	
 AdBuddiz.callback.didFailToShowAd = function(error:String) trace('Failed to show ad. ERROR: $error');
+```
 
-c) Optional - Request SDK Status
+##### c) Optional - Request SDK Status
 
-To know if the SDK will be able to display an ad, you can call isReadyToShowAd().
-
+To know if the SDK will be able to display an ad, you can call AdBuddiz.isReadyToShowAd().
+```haxe
 if (AdBuddiz.IsReadyToShowAd()) {
 	trace("Ad is ready to show");
 }
+```
 
+That's it!
 
