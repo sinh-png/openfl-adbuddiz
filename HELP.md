@@ -20,13 +20,13 @@ To set your publisher key, in `"project.xml"` add the following line
 Depending on your app, replace `"TEST_PUBLISHER_KEY"` with the right publisher key.
 
 ##### b) Optional - Test mode
-You can activate test mode by adding the following line in your `"project.xml"`
+You can activate test mode by adding the following line in `"project.xml"`
 ```xml
 <setenv name="AdBuddizTestModeActive" />
 ````
 
 ##### b) Optional - Logs
-You can control the AdBuddiz SDK log level by adding the following line in your `"project.xml"`
+You can control the AdBuddiz SDK log level by adding the following line in `"project.xml"`
 ```xml
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
 ```
