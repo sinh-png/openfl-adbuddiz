@@ -33,6 +33,12 @@ Use:
 
 ________________________________________________________
 
+#### Example
+
+Please check here: https://github.com/hazagames/openfl-adbuddiz-example
+
+________________________________________________________
+
 
 https://twitter.com/haza418
 	
