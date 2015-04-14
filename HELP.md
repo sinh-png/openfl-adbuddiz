@@ -1,6 +1,7 @@
 ### 1. Install 
 
-Use this command: 
+Use this command 
+
 `haxelib install openfl-adbuddiz`
 
 ### 2. Import the extension to your project
