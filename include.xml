@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<section if="android">
+		<dependency name="openfl-adbuddiz" path="dependencies/openfl-adbuddiz"/>
+		<android extension="me.haza.adbuddiz.AdBuddizExtension" />
+		<template path="dependencies/openfl-adbuddiz/libs/AdBuddiz-3.0.12.jar" rename="deps/openfl-adbuddiz/libs/AdBuddiz-3.0.12.jar" />
+	</section>
+</project>
