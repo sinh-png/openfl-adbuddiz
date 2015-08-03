@@ -4,8 +4,8 @@
 	"license": "MIT",
 	"tags": ["Adbuddiz","ads","openfl","android"],
 	"description": "AdBuddiz Community extension for OpenFL. Currently only support Android.",
-	"version": "0.1.3",
-	"releasenote": "Update to AdBuddiz API 3.0.12",
+	"version": "0.1.4",
+	"releasenote": "Update to AdBuddiz API 3.0.14",
 	"contributors": ["hazame"],
 	"dependencies": {}
 }
