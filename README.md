@@ -8,6 +8,10 @@ Use this command
 
 `haxelib install openfl-adbuddiz`
 
+If you want to use this repo as the libary source (might get more frequent updates) please use this command
+
+`haxelib git openfl-adbuddiz https://github.com/hazagames/openfl-adbuddiz`
+
 ### 2. Import the extension to your project
 In `"project.xml"` add the following line
 ```xml
