@@ -14,7 +14,7 @@ class AdBuddiz {
 	/**
 	 * The version of this extension.
 	 */
-	inline public static var VERSION:String = "0.1.3";
+	inline public static var VERSION:String = "0.1.4";
 	
 	inline static var CLASS_EXT:String = "me/haza/adbuddiz/AdBuddizExtension";
 	
