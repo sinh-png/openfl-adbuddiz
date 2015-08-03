@@ -1,7 +1,5 @@
 package extension.adbuddiz;
 
-import cpp.Void;
-
 #if android
 import openfl.utils.JNI;
 #elseif ios
@@ -53,24 +51,24 @@ class AdBuddiz {
 
 class AdBuddizCallback {
 	/**
-	 * Callback that will be called when successfully show ad. This callback has no argument.
+	 * Callback that will be called when successfully show ad.
 	 */
-	public var didShowAd:Dynamic;
+	public var didShowAd:Void->Void;
 	
 	/**
-	 * Callback that will be called when ad is being clicked on. This callback has no argument.
+	 * Callback that will be called when ad is being clicked on.
 	 */
-	public var didClick:Dynamic;
+	public var didClick:Void->Void;
 	
 	/**
-	 * Callback that will be called when hide ad. This callback has no argument.
+	 * Callback that will be called when hide ad.
 	 */
-	public var didHideAd:Dynamic;
+	public var didHideAd:Void->Void;
 	
 	/**
 	 * Callback that will be called when failed to show ad. This callback has one String type argument.
 	 */
-	public var didFailToShowAd:Dynamic;
+	public var didFailToShowAd:String->Void;
 	
 	public function new() {
 		#if android
