@@ -103,6 +103,7 @@ AdBuddiz.rewardedVideo.callback.didFail = function(error:String) trace('SDK was 
 AdBuddiz.rewardedVideo.callback.didNotComplete = function() trace('An error happened during video playback.');
 ```
 
+
 ### 6. Example
 
 An example for using OpenFl-AdBuddiz: https://github.com/hazagames/openfl-adbuddiz-example
