@@ -9,6 +9,8 @@ import com.purplebrain.adbuddiz.sdk.AdBuddiz;
 import com.purplebrain.adbuddiz.sdk.AdBuddizDelegate;
 import com.purplebrain.adbuddiz.sdk.AdBuddizError;
 import com.purplebrain.adbuddiz.sdk.AdBuddizLogLevel;
+import com.purplebrain.adbuddiz.sdk.AdBuddizRewardedVideoDelegate;
+import com.purplebrain.adbuddiz.sdk.AdBuddizRewardedVideoError;
 
 public class AdBuddizExtension extends Extension {
 	

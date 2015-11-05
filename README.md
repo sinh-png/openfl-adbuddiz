@@ -45,7 +45,7 @@ You can control the AdBuddiz SDK log level by adding the following line in `"pro
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
 ```
 
-### 4. Show Ad
+### 4. Interstitial Ad
 
 ##### a) Show ad
 
@@ -73,11 +73,40 @@ if (AdBuddiz.isReadyToShowAd()) {
 }
 ```
 
-### 5. Example
+### 5. Rewarded Video
+
+##### a) Fetch
+
+Before displaying a video, you need to call `AdBuddiz.rewardedVideo.fetch()`. 
+
+*To minimize bandwidth usage, fetch only if you plan to display a rewarded video to the user.*
+
+##### b) Show and request SDK status
+
+Call `AdBuddiz.rewardedVideo.show()` to display a rewarded video. 
+
+To know if the SDK will be able to display a rewarded video, you can call `AdBuddiz.rewardedVideo.isReadyToShow()`. 
+
+##### c) Give the reward and set callbacks
+
+At the end of the video, you should give a reward to the user. We recommend a reward worth ~15 minutes of gameplay.
+
+`AdBuddiz.rewardedVideo.callback.didComplete` will be called when the user completed the video, set this to your callback to give them the reward. There are also other optional callbacks in `AdBuddiz.rewardedVideo.callback` to help you get more control and information over rewarded video.
+
+Example:
+```haxe
+AdBuddiz.rewardedVideo.callback.didComplete = function() trace("User fully watched the video, give the reward here.");
+
+// optional
+AdBuddiz.rewardedVideo.callback.didFetch = function() trace("A video is ready to be displayed.");
+AdBuddiz.rewardedVideo.callback.didFail = function(error:String) trace('SDK was unable to fetch or show a video. ERROR: $error');
+AdBuddiz.rewardedVideo.callback.didNotComplete = function() trace('An error happened during video playback.');
+```
+
+### 6. Example
 
 An example for using OpenFl-AdBuddiz: https://github.com/hazagames/openfl-adbuddiz-example
 
-That's it!
 _______________________________________
 
 https://twitter.com/haza418

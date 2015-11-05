@@ -32,7 +32,7 @@ class AdBuddiz {
 	 */
 	public static function showAd() {
 		#if android
-		if (_funcShowAd == null) funcShowAd = JNI.createStaticMethod(CLASS_EXT, "showAd", "()V");
+		if (_funcShowAd == null) _funcShowAd = JNI.createStaticMethod(CLASS_EXT, "showAd", "()V");
 		#elseif ios
 		//
 		#end
@@ -57,12 +57,16 @@ class RewardedVideo {
 	/**
 	 * Callbacks for rewarded video.
 	 */
-	public static var callback(default, null):RewardedVideoCallback = new RewardedVideoCallback();
+	public var callback(default, null):RewardedVideoCallback = new RewardedVideoCallback();
 	
 	
 	static var _funcFetch:Void->Void = null;
-	static var _funcShow:Void->Bool = null;
+	static var _funcShow:Void->Void = null;
 	static var _funcIsReadyToShow:Void->Bool = null;
+	
+	public function new() {
+		
+	}
 	
 	/**
 	 * Fetch a reward video. 
@@ -70,11 +74,11 @@ class RewardedVideo {
 	 */
 	public function fetch():Void {
 		#if android
-		if (_funcFetch == null) _funcFetch = JNI.createStaticMethod(CLASS_EXT, "fetchRewardedVideo", "()V");
+		if (_funcFetch == null) _funcFetch = JNI.createStaticMethod(AdBuddiz.CLASS_EXT, "fetchRewardedVideo", "()V");
 		#elseif ios
 		//
 		#end
-		return _funcFetch();
+		_funcFetch();
 	}
 	
 	/**
@@ -82,11 +86,11 @@ class RewardedVideo {
 	 */
 	public function show():Void {
 		#if android
-		if (_funcShow == null) _funcShow = JNI.createStaticMethod(CLASS_EXT, "showRewardedVideo", "()V");
+		if (_funcShow == null) _funcShow = JNI.createStaticMethod(AdBuddiz.CLASS_EXT, "showRewardedVideo", "()V");
 		#elseif ios
 		//
 		#end
-		return _funcShow();
+		_funcShow();
 	}
 	
 	/**
@@ -94,7 +98,7 @@ class RewardedVideo {
 	 */
 	public static function isReadyToShow():Bool {
 		#if android
-		if (_funcIsReadyToShow == null) _funcIsReadyToShow = JNI.createStaticMethod(CLASS_EXT, "isReadyToShowRewardedVideo", "()Z");
+		if (_funcIsReadyToShow == null) _funcIsReadyToShow = JNI.createStaticMethod(AdBuddiz.CLASS_EXT, "isReadyToShowRewardedVideo", "()Z");
 		#elseif ios
 		//
 		#end
@@ -103,6 +107,10 @@ class RewardedVideo {
 }
 
 class RewardedVideoCallback {
+	
+	public function new() {
+		
+	}
 	
 	/**
 	 * Callback will be called when user fully watched the video. Give the reward here.
@@ -170,6 +178,7 @@ class AdBuddizCallback {
 				if (AdBuddiz.rewardedVideo.callback.didFail != null) AdBuddiz.rewardedVideo.callback.didFail(error);
 			case "rewardVideoDidNotComplete": 
 				if (AdBuddiz.rewardedVideo.callback.didNotComplete != null) AdBuddiz.rewardedVideo.callback.didNotComplete();
+				
 		}
 	}
 }

@@ -5,7 +5,7 @@
 	"tags": ["Adbuddiz","ads","openfl","android"],
 	"description": "AdBuddiz Community extension for OpenFL. Currently only support Android.",
 	"version": "0.1.5",
-	"releasenote": "Update to AdBuddiz API 3.1.3. Now support reward video.",
+	"releasenote": "Update to AdBuddiz API 3.1.3. Now support video ad and rewarded video.",
 	"contributors": ["hazame"],
 	"dependencies": {}
 }
