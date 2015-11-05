@@ -58,6 +58,25 @@ public class AdBuddizExtension extends Extension {
 				callback.call1("call", "didHideAd");
 			}
 		});
+		
+		AdBuddiz.RewardedVideo.setDelegate(new AdBuddizRewardedVideoDelegate() {
+			@Override
+			public void didComplete() {
+				callback.call1("call", "rewardVideoDidComplete");
+			}
+			@Override
+			public void didFetch() {
+				callback.call1("call", "rewardVideoDidFetch");
+			}
+			@Override
+			public void didFail(AdBuddizRewardedVideoError error) {
+				callback.call2("call", "rewardVideoDidFail", error.name());
+			}
+			@Override
+			public void didNotComplete() {
+				callback.call1("call", "rewardVideoDidNotComplete");
+			}
+		});
 	}
 	
 	@Override
@@ -66,11 +85,27 @@ public class AdBuddizExtension extends Extension {
 		AdBuddiz.onDestroy();
 	}
 	
+	//
+	
 	public static void showAd() {
 		AdBuddiz.showAd(Extension.mainActivity);
 	}
 	
 	public static boolean isReadyToShowAd() {
 		return AdBuddiz.isReadyToShowAd(Extension.mainActivity);
+	}
+	
+	//
+	
+	public static void fetchRewardedVideo() {
+		AdBuddiz.RewardedVideo.fetch(Extension.mainActivity);
+	}
+	
+	public static void showRewardedVideo() {
+		AdBuddiz.RewardedVideo.show(Extension.mainActivity);
+	}
+	
+	public static boolean isReadyToShowRewardedVideo() {
+		return AdBuddiz.RewardedVideo.isReadyToShow(Extension.mainActivity);
 	}
 }
