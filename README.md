@@ -87,6 +87,12 @@ Call `AdBuddiz.rewardedVideo.show()` to display a rewarded video.
 
 To know if the SDK will be able to display a rewarded video, you can call `AdBuddiz.rewardedVideo.isReadyToShow()`. 
 
+```haxe
+if (AdBuddiz.rewardedVideo.isReadyToShow()) {
+	AdBuddiz.rewardedVideo.show();
+}
+```
+
 ##### c) Give the reward and set callbacks
 
 At the end of the video, you should give a reward to the user. We recommend a reward worth ~15 minutes of gameplay.
