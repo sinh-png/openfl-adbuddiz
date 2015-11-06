@@ -39,7 +39,7 @@ You can activate test mode by adding the following line in `"project.xml"`
 <setenv name="AdBuddizTestModeActive" />
 ````
 
-##### b) Optional - Logs
+##### c) Optional - Logs
 You can control the AdBuddiz SDK log level by adding the following line in `"project.xml"`
 ```xml
 <setenv name="AdBuddizLogLevel" value="Info" /> <!-- or Error, Silent -->
@@ -106,13 +106,13 @@ AdBuddiz.rewardedVideo.callback.didComplete = function() trace("User fully watch
 // optional
 AdBuddiz.rewardedVideo.callback.didFetch = function() trace("A video is ready to be displayed.");
 AdBuddiz.rewardedVideo.callback.didFail = function(error:String) trace('SDK was unable to fetch or show a video. ERROR: $error');
-AdBuddiz.rewardedVideo.callback.didNotComplete = function() trace('An error happened during video playback.');
+AdBuddiz.rewardedVideo.callback.didNotComplete = function() trace("An error happened during video playback.");
 ```
 
 
 ### 6. Example
 
-An example for using OpenFl-AdBuddiz: https://github.com/hazagames/openfl-adbuddiz-example
+An example for using OpenFL-AdBuddiz: https://github.com/hazagames/openfl-adbuddiz-example
 
 _______________________________________
 
