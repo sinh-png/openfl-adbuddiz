@@ -18,12 +18,6 @@ In `"project.xml"` add the following line
 <haxelib name="openfl-adbuddiz" />
 ```
 
-Note that the extension currently only work with OpenFL legacy. To enable legacy mode, add the following before `<haxelib name="openfl" />`
-
-```xml
-<set name="openfl-legacy" />
-```
-
 ### 3. Configure & Initialize 
 
 ##### a) Config your publisher key
